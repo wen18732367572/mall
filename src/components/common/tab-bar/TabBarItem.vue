@@ -16,8 +16,8 @@ export default {
   name: "TabBarItem",
   data() {
     return {
-      //   isActive: true,
-      path:"",
+      // isActive: true,
+      // path:'',
     };
   },
   props: {
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     itemClick() {
-      this.$router.replace(this.path);
+       this.$router.replace(this.path);
     },
   },
   computed: {

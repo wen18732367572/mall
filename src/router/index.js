@@ -9,7 +9,7 @@ const ShopCart=()=>import('../views/ShopCart/ShopCart')
 const routes=[
   {
     path:'',
-    redirect:"/Home"
+    redirect:"/home"
   },
   {
     path:'/Home',
