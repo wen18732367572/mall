@@ -17,6 +17,9 @@ export default {
     height: 44px;
     text-align: center;
     box-shadow: 0 1px 1px rgba(100,100,100,0.1);
+    /* 下面两行代码是为了解决在分类页面  TabMenu上滑是压住navbar */
+    position: relative;
+     z-index: 10;
   }
   .left,.right{
     width: 60px;

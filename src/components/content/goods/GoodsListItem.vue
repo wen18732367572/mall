@@ -1,6 +1,6 @@
 <template>
-  <div class="goodsItem">
-    <img :src="goodsItem.show.img" alt="">
+  <div class="goodsItem" @click="itemClick">
+    <img v-lazy="showImage" @load="imageLoad" alt="">
     <div class="goodsInfo">
       <p>{{goodsItem.title}}</p>
       <span class="price">{{goodsItem.price}}</span>
@@ -18,21 +18,35 @@ export default {
         return{}
       }
     }
-  }
+  },
+  computed:{
+    showImage(){
+      return this.goodsItem.img || this.goodsItem.image || this.goodsItem.show.img 
+      
+      
+    }
+  },
+  methods: {
+    //事件总线  用之前先要在main.js注册到js原型
+    // Vue.prototype.$bus = new Vue()
+    imageLoad(){
+     this.$bus.$emit('itemImageLoad')
+    },
+    itemClick(){
+      this.$router.push("/detail/"+this.goodsItem.iid)
+    }
+  },
 }
 </script>
 <style>
     .goodsItem{
       padding-bottom: 40px;
       position: relative;
-      z-index: -1;
       width: 48%;
     }
     .goodsItem img{
       width: 100%;
-      border-radius: 5px;
-     
-      
+      border-radius: 5px; 
     }
     .goodsInfo{
       font-size: 12px;

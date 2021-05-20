@@ -5,6 +5,8 @@ const Home=()=>import('../views/Home/Home')
 const Category=()=>import('../views/Category/Category')
 const Profile=()=>import('../views/Profile/Profile')
 const ShopCart=()=>import('../views/ShopCart/ShopCart') 
+const Detail=()=>import('../views/Detail/Detail')
+
 
 const routes=[
   {
@@ -12,21 +14,26 @@ const routes=[
     redirect:"/home"
   },
   {
-    path:'/Home',
+    path:'/home',
     component:Home
   },
   {
-    path:'/Category',
+    path:'/category',
     component:Category
   },
   {
-    path:'/ShopCart',
+    path:'/shopCart',
     component:ShopCart
   },
   {
-    path:'/Profile',
+    path:'/profile',
     component:Profile
-  }
+  },
+  {
+    path:'/detail/:iid',
+    component:Detail
+  },
+  
 ]
 
 
